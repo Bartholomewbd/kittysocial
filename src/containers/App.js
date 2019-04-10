@@ -1,17 +1,31 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import CardList from "../components/CardList";
+
 import SearchBox from "../components/SearchBox";
 import ErrorBoundry from "../components/ErrorBoundry";
 import Scroll from "../components/Scroll";
+import { setSearchField } from "../actions";
 
 import "./app.css";
+
+const mapStateToProps = state => {
+  return {
+    searchField: state.searchField
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSearchChange: e => dispatch(setSearchField(e.target.value))
+  };
+};
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      kittys: [],
-      searchfield: ""
+      kittys: []
     };
   }
 
@@ -21,12 +35,9 @@ class App extends Component {
       .then(users => this.setState({ kittys: users }));
   }
 
-  onSearchChange = e => {
-    this.setState({ searchfield: e.target.value });
-  };
-
   render() {
-    const { kittys, searchfield } = this.state;
+    const { kittys } = this.state;
+    const { searchField, onSearchChange } = this.props;
     const findMatches = (wordToMatch, kittys) => {
       return kittys.filter(kittys => {
         const regex = new RegExp(wordToMatch, "gi");
@@ -37,14 +48,14 @@ class App extends Component {
         );
       });
     };
-    const filteredKittys = findMatches(searchfield, kittys);
+    const filteredKittys = findMatches(searchField, kittys);
 
     return !kittys.length ? (
       <h1 className="tc">Loading Kittens</h1>
     ) : (
       <div className="tc">
         <h1 className="f1">Kitty Social</h1>
-        <SearchBox searchChange={this.onSearchChange} />
+        <SearchBox searchChange={onSearchChange} />
         <Scroll>
           <ErrorBoundry>
             <CardList kittys={filteredKittys} />
@@ -55,4 +66,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
