@@ -1,26 +1,26 @@
 self.__precacheManifest = [
   {
-    "revision": "a1b6ac874fecec800266",
+    "revision": "0f2af51d8bfae288e308",
     "url": "/kittysocial/static/css/main.328914cd.chunk.css"
   },
   {
-    "revision": "a1b6ac874fecec800266",
-    "url": "/kittysocial/static/js/main.509b35a8.chunk.js"
+    "revision": "0f2af51d8bfae288e308",
+    "url": "/kittysocial/static/js/main.196a4a8b.chunk.js"
   },
   {
     "revision": "2c46a5d31f0713d01ed6",
     "url": "/kittysocial/static/js/runtime~main.000468e4.js"
   },
   {
-    "revision": "2fadf87f3697dd38db8d",
+    "revision": "37e8883f6df8a1d0ad98",
     "url": "/kittysocial/static/css/2.a07ed53c.chunk.css"
   },
   {
-    "revision": "2fadf87f3697dd38db8d",
-    "url": "/kittysocial/static/js/2.1a543e43.chunk.js"
+    "revision": "37e8883f6df8a1d0ad98",
+    "url": "/kittysocial/static/js/2.abd0d98f.chunk.js"
   },
   {
-    "revision": "3efa9e05e4ef0fa621489f6f905e52ea",
+    "revision": "b803d84babcc74cd6de03b3b93ea6e92",
     "url": "/kittysocial/index.html"
   }
 ];
