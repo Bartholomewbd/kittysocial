@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/kittysocial/static/js/2.1a543e43.chunk.js"
   },
   {
-    "revision": "223e1ff88ef0f00ea1c4fb75e4a23481",
+    "revision": "b0963fcd0d7a8d10c57fe846eb1c23cb",
     "url": "/kittysocial/index.html"
   }
 ];
