@@ -1,15 +1,15 @@
 {
-  "main.css": "/kittysocial/static/css/main.22ff8d71.chunk.css",
-  "main.js": "/kittysocial/static/js/main.2e01361b.chunk.js",
-  "main.js.map": "/kittysocial/static/js/main.2e01361b.chunk.js.map",
+  "main.css": "/kittysocial/static/css/main.328914cd.chunk.css",
+  "main.js": "/kittysocial/static/js/main.509b35a8.chunk.js",
+  "main.js.map": "/kittysocial/static/js/main.509b35a8.chunk.js.map",
   "runtime~main.js": "/kittysocial/static/js/runtime~main.000468e4.js",
   "runtime~main.js.map": "/kittysocial/static/js/runtime~main.000468e4.js.map",
   "static/css/2.a07ed53c.chunk.css": "/kittysocial/static/css/2.a07ed53c.chunk.css",
   "static/js/2.1a543e43.chunk.js": "/kittysocial/static/js/2.1a543e43.chunk.js",
   "static/js/2.1a543e43.chunk.js.map": "/kittysocial/static/js/2.1a543e43.chunk.js.map",
   "index.html": "/kittysocial/index.html",
-  "precache-manifest.b909a062ef952dcd56f07dc428105fd1.js": "/kittysocial/precache-manifest.b909a062ef952dcd56f07dc428105fd1.js",
+  "precache-manifest.a9a14be3862a3483983f73283d2b0171.js": "/kittysocial/precache-manifest.a9a14be3862a3483983f73283d2b0171.js",
   "service-worker.js": "/kittysocial/service-worker.js",
   "static/css/2.a07ed53c.chunk.css.map": "/kittysocial/static/css/2.a07ed53c.chunk.css.map",
-  "static/css/main.22ff8d71.chunk.css.map": "/kittysocial/static/css/main.22ff8d71.chunk.css.map"
+  "static/css/main.328914cd.chunk.css.map": "/kittysocial/static/css/main.328914cd.chunk.css.map"
 }

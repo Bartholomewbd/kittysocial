@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/kittysocial/precache-manifest.b909a062ef952dcd56f07dc428105fd1.js"
+  "/kittysocial/precache-manifest.a9a14be3862a3483983f73283d2b0171.js"
 );
 
 workbox.clientsClaim();
