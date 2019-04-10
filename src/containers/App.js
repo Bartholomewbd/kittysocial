@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
-import Scroll from "./Scroll";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
+import Scroll from "../components/Scroll";
 
 import "./app.css";
 
@@ -25,6 +25,7 @@ class App extends Component {
   };
 
   render() {
+    const { kittys, searchfield } = this.state;
     const findMatches = (wordToMatch, kittys) => {
       return kittys.filter(kittys => {
         const regex = new RegExp(wordToMatch, "gi");
@@ -35,24 +36,19 @@ class App extends Component {
         );
       });
     };
-    const filteredKittys = findMatches(
-      this.state.searchfield,
-      this.state.kittys
-    );
+    const filteredKittys = findMatches(searchfield, kittys);
 
-    if (this.state.kittys.length === 0) {
-      return <h1 className="tc">Loading Kittens</h1>;
-    } else {
-      return (
-        <div className="tc">
-          <h1 className="f1">Kitty Social</h1>
-          <SearchBox searchChange={this.onSearchChange} />
-          <Scroll>
-            <CardList kittys={filteredKittys} />
-          </Scroll>
-        </div>
-      );
-    }
+    return !kittys.length ? (
+      <h1 className="tc">Loading Kittens</h1>
+    ) : (
+      <div className="tc">
+        <h1 className="f1">Kitty Social</h1>
+        <SearchBox searchChange={this.onSearchChange} />
+        <Scroll>
+          <CardList kittys={filteredKittys} />
+        </Scroll>
+      </div>
+    );
   }
 }
 
