@@ -5,39 +5,33 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import ErrorBoundry from "../components/ErrorBoundry";
 import Scroll from "../components/Scroll";
-import { setSearchField } from "../actions";
+import { setSearchField, requestKittys } from "../actions";
 
 import "./app.css";
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchField
+    searchField: state.searchKittys.searchField,
+    kittys: state.requestKittys.kittys,
+    isPending: state.requestKittys.isPending,
+    error: state.requestKittys.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSearchChange: e => dispatch(setSearchField(e.target.value))
+    onSearchChange: e => dispatch(setSearchField(e.target.value)),
+    onRequestKittys: () => dispatch(requestKittys())
   };
 };
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      kittys: []
-    };
-  }
-
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
-      .then(users => this.setState({ kittys: users }));
+    this.props.onRequestKittys();
   }
 
   render() {
-    const { kittys } = this.state;
-    const { searchField, onSearchChange } = this.props;
+    const { searchField, onSearchChange, kittys, isPending } = this.props;
     const findMatches = (wordToMatch, kittys) => {
       return kittys.filter(kittys => {
         const regex = new RegExp(wordToMatch, "gi");
@@ -50,7 +44,7 @@ class App extends Component {
     };
     const filteredKittys = findMatches(searchField, kittys);
 
-    return !kittys.length ? (
+    return isPending ? (
       <h1 className="tc">Loading Kittens</h1>
     ) : (
       <div className="tc">
